@@ -1,0 +1,71 @@
+body{
+    background-color: black;
+    color: whitesmoke;
+}
+
+h1{
+    font-size: 700%;
+}
+
+div1
+{
+    text-align: center;
+}
+div{
+    height: 760 px;
+}
+
+.center
+{
+    position: absolute;
+    left: 0;
+    top: 75%;
+    width: 100%;
+    text-align: center;
+
+}
+.response
+{
+    position: absolute;
+    left: 0;
+    top: 70%;
+    width: 100%;
+    font-size: 60;
+    text-align: center;
+
+}
+.left {
+    position: absolute;
+    top: 250px;
+    left: 16px;
+    font-size: 32px;
+}
+.left2 {
+    position: absolute;
+    top: 300px;
+    left: 16px;
+    font-size: 32px;
+}
+
+.right {
+    position: absolute;
+    top: 250px;
+    right: 16px;
+    font-size: 32px;
+}
+
+
+.right2 {
+    position: absolute;
+    top: 300px;
+    right: 16px;
+    font-size: 32px;
+}
+
+.main
+{
+    position: absolute;
+    top: 200px;
+    right: 650px;
+    font-size: 62px;
+}

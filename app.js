@@ -1,7 +1,7 @@
 var app = angular.module("HangmanApp", []);
 app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
 {
-    var words = ["rat","sat","vat"];
+    var words = ["baby", "bananas", "apples", "oranges", "orgutans", "goat", "fool", "bad", "program", "dont", "hate", "angular", "javascript", "fluid", "mechanics", "organic", "materials", "transmission", "wave", "beams", "beans", "axial", "deformations", "integration", "derivative", "liquids", "moist", "waterloo", "toronto", "memes"];
     $scope.incorrectLettersChosen=[];
     $scope.correctLettersChosen=[];
     $scope.guesses=6;
@@ -28,7 +28,7 @@ app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
         var tempDisplayedWord = '';
         for(var i=0;i<selectedWord.length;i++)
         {
-            tempDisplayedWord+='*';
+            tempDisplayedWord+='_';
         }
         $scope.displayWord=tempDisplayedWord;
         console.log(selectedWord);
@@ -52,6 +52,7 @@ app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
                 return;
             }
         }
+        if($scope.input.letter.toLowerCase()==""){ return}
         var correct =false;
         for(var i=0;i<selectedWord.length;i++)
         {
@@ -65,11 +66,11 @@ app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
         
         if (correct)
         {
-            $scope.correctLettersChosen.push($scope.input.letter.toLowerCase());
+            $scope.correctLettersChosen.push($scope.input.letter.toUpperCase());
         }
         else{
             $scope.guesses--;
-            $scope.incorrectLettersChosen.push($scope.input.letter.toLowerCase());
+            $scope.incorrectLettersChosen.push($scope.input.letter.toUpperCase());
         }
 
         for(var i=0;i<1;i++)
@@ -83,7 +84,7 @@ app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
             $timeout(function(){newGame();},500);
         }
         
-        if($scope.displayWord.indexOf("*")==-1)
+        if($scope.displayWord.indexOf("_")==-1)
         {
             $timeout(function(){newGame();},500);
         }
