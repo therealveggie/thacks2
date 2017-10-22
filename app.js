@@ -28,7 +28,7 @@ app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
         var tempDisplayedWord = '';
         for(var i=0;i<selectedWord.length;i++)
         {
-            tempDisplayedWord+='_';
+            tempDisplayedWord+='_ ';
         }
         $scope.displayWord=tempDisplayedWord;
         console.log(selectedWord);
@@ -59,11 +59,10 @@ app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
             console.log(selectedWord[i].toLowerCase() + " " + $scope.input.letter.toLowerCase() + " "+ (selectedWord[i].toLowerCase()==$scope.input.letter.toLowerCase()));
             if(selectedWord[i].toLowerCase()==$scope.input.letter.toLowerCase())
             {
-                $scope.displayWord = $scope.displayWord.slice(0,i)+$scope.input.letter.toLowerCase()+$scope.displayWord.slice(i+1)
+                $scope.displayWord = $scope.displayWord.slice(0,i*2)+$scope.input.letter.toLowerCase()+$scope.displayWord.slice(i*2+1)
                 correct=true;
             }
         }
-        
         if (correct)
         {
             $scope.correctLettersChosen.push($scope.input.letter.toUpperCase());
