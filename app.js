@@ -52,7 +52,7 @@ app.controller("GameController",['$scope','$timeout',function($scope,$timeout)
                 return;
             }
         }
-        if($scope.input.letter.toLowerCase()==""){ return}
+        if($scope.input.letter.toLowerCase()=="" || $scope.input.letter.length!=1 ){ return}
         var correct =false;
         for(var i=0;i<selectedWord.length;i++)
         {
